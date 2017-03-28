@@ -202,7 +202,7 @@ public class MainForm extends javax.swing.JFrame {
   }//GEN-LAST:event_jComboBox1ItemStateChanged
 
   private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    String value = jTextField6.getText();
+    Double value = Double.parseDouble(jTextField6.getText());
     TypPomiaru typ = (TypPomiaru) jComboBox2.getSelectedItem();
     if (value == null || typ == null) {
       return;
@@ -214,6 +214,7 @@ public class MainForm extends javax.swing.JFrame {
     List<Pomiar> computeIfAbsent = znajdz.pomiary.computeIfAbsent(typ, t -> new ArrayList<>());
     computeIfAbsent.add(new Pomiar(typ, value));
     jComboBox1.setModel(new PacjentComboModel(zrodloPacjentow.dajPacjentow()));
+    jTextField6.setText("");
   }//GEN-LAST:event_jButton6ActionPerformed
 
   private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -221,7 +222,10 @@ public class MainForm extends javax.swing.JFrame {
   }//GEN-LAST:event_formWindowClosing
 
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    System.out.println("Jeszcze nie ma");
+    final GraphFrame graphPanel = new GraphFrame(zrodloPacjentow.znajdz(jTextField1.getText(), jTextField2.getText()), (TypPomiaru) jComboBox2.getSelectedItem());
+    java.awt.EventQueue.invokeLater(() -> {
+      graphPanel.setVisible(true);
+    });
   }//GEN-LAST:event_jButton1ActionPerformed
 
   /**
