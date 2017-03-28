@@ -1,0 +1,1 @@
+{"pacjenci":[{"imie":"Jan","nazwisko":"Kowalski","pomiary":{"Wiek":[{"typ":"Wiek","value":"32"}]}},{"imie":"Krzysztof","nazwisko":"Osiecki","pomiary":{"Wiek":[{"typ":"Wiek","value":"34"}],"Temperatura":[{"typ":"Temperatura","value":"90"}]}},{"imie":"Emil","nazwisko":"Benedykciuk","pomiary":{"Waga":[{"typ":"Waga","value":"67"}]}}]}
